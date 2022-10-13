@@ -18,7 +18,7 @@
 //- (void)set_no:(int)_no;
 ```
 
-- 注意最原始@property就只是声明**setter**和**getter**方法，成员变量需要手动设置，**setter**和**getter**的实现也需要手写
+- 注意最原始 **@property** 就只是声明**setter**和**getter**方法，成员变量需要手动设置，**setter**和**getter**的实现也需要手写
 
 
 
@@ -32,7 +32,7 @@
 
 - **TIPS**：
 
-  > Xcode 13 测试的结果，MRC下 @synthesize 自动生成的实现是完全符合内存管理规则的，只是需要重写dealloc，将成员变量释放掉
+  > Xcode 13 测试的结果，MRC下  **@synthesize**  自动生成的实现是完全符合内存管理规则的，只是需要重写dealloc，将成员变量释放掉
 
 ```objc
 @synthesize age;
@@ -42,13 +42,13 @@
 //}
 ```
 
-- 注意下这里的 `age` 仅仅是**属性名** 和@property中定义的**对应**（函数的声明与实现应该对应）
+- 注意下这里的 `age` 仅仅是**属性名** 和 **@property** 中定义的**对应**（函数的声明与实现应该对应）
 
-- 默认情况下是**访问**与@property**同名**的**成员变量**
+- 默认情况下是**访问**与 **@property** **同名**的**成员变量**
 
-- 后面经过一次更新，@synthesize增强了，如果找不到该成员变量，则会**默认生成这个同名的(私有的)成员变量**
+- 后面经过一次更新， **@synthesize** 增强了，如果找不到该成员变量，则会**默认生成这个同名的(私有的)成员变量**
 
-- 也就是说，理论上只要写了@property和@synthesize就够了，不用再去大括号里定义成员变量
+- 也就是说，理论上只要写了 **@property** 和 **@synthesize** 就够了，不用再去大括号里定义成员变量
 
 
 
@@ -58,12 +58,12 @@
 
 点语法调用的时候不含下划线，而实际上的成员变量名是由下划线的
 
-@synthesize中的属性名肯定不能改，但是默认生成的是没有下划线的成员变量，如果类里面写了一个成员变量为_age, 又写了@synthesize age 
+ **@synthesize** 中的属性名肯定不能改，但是默认生成的是没有下划线的成员变量，如果类里面写了一个成员变量为_age, 又写了@synthesize age 
 
 最终会有两个成员变量
 
 - _age (定义的)
-- age (@synthesize 自动生成的)
+- age ( **@synthesize**  自动生成的)
 
 最终使用还是age，_age属于无效定义
 
@@ -71,7 +71,7 @@
 
 ### 为了解决这个问题
 
-@synthesize有另一种写法
+ **@synthesize** 有另一种写法
 
 ```objc
 @synthesize age = _age; //后面这个值代表了setter,getter将要访问谁,将要创建的成员变量是谁
@@ -87,9 +87,9 @@
 
 # @property 增强版 ( Xcode >= 4.5 )
 
-Xcode 4.5 之后，Apple对@property进行了一波增强
+Xcode 4.5 之后，Apple对 **@property** 进行了一波增强
 
-现在只需要写一句@property，无需写@synthesize 就可以实现所有的功能
+现在只需要写一句 **@property** ，无需写 **@synthesize**  就可以实现所有的功能
 
 同样也是属于编译器特性
 
@@ -104,7 +104,7 @@ Xcode 4.5 之后，Apple对@property进行了一波增强
 
 > **TIPS**：
 >
-> Xcode 13 测试的结果，MRC下 @property 自动生成的实现是完全符合内存管理规则的，只是需要重写dealloc，将成员变量释放掉
+> Xcode 13 测试的结果，MRC下  **@property**  自动生成的实现是完全符合内存管理规则的，只是需要重写dealloc，将成员变量释放掉
 
 
 
@@ -124,11 +124,11 @@ Property implementation must have its declaration in interface 'XXX' or one of i
 
 ### @synthesize的优先级
 
-@synthesize的优先级大于@property
+ **@synthesize** 的优先级大于 **@property** 
 
 如果@property int age; 
 
 后面又写了个@synthesize age;
 
-虽然说@property会生成 _age 的成员变量，但是@synthesize的优先级更高，这样写只会生成age，不会生成 _age
+虽然说 **@property** 会生成 _age 的成员变量，但是 **@synthesize** 的优先级更高，这样写只会生成age，不会生成 _age
 
