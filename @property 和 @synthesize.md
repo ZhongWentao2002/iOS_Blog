@@ -18,7 +18,7 @@
 //- (void)set_no:(int)_no;
 ```
 
-- 注意最原始@property就只是声明**setter**和**getter**方法，成员变量需要手动设置，**setter**和**getter**的实现也需要手动设置
+- 注意最原始@property就只是声明**setter**和**getter**方法，成员变量需要手动设置，**setter**和**getter**的实现也需要手写
 
 
 
