@@ -28,7 +28,11 @@
 @synthesize <属性名> [= <成员变量名>]
 ```
 
-- 编译器在编译这行代码的时候，会自动生成对应属性名的**setter**和**getter**的**实现**
+- 编译器在编译这行代码的时候，会自动生成对应属性名的**setter**和**getter**的**标准实现**
+
+- **TIPS**：
+
+  > Xcode 13 测试的结果，MRC下 @synthesize 自动生成的实现是完全符合内存管理规则的，只是需要重写dealloc，将成员变量释放掉
 
 ```objc
 @synthesize age;
@@ -77,7 +81,7 @@
 //}
 ```
 
-这样写的好处在于，**属性名**（**setter**，**getter**的方法名）不变的同时，自动创建的成员变量是带有下划线的
+这样写的好处在于，**属性名**（**setter**，**getter**的方法名）不变的同时，自动创建的成员变量是带有下划线的 (如果大括号中有声明就用大括号的，发现没有就自动创建)
 
 
 
@@ -101,3 +105,30 @@ Xcode 4.5 之后，Apple对@property进行了一波增强
 > **TIPS**：
 >
 > Xcode 13 测试的结果，MRC下 @property 自动生成的实现是完全符合内存管理规则的，只是需要重写dealloc，将成员变量释放掉
+
+
+
+# 注意事项
+
+### 使用@synthesize必须使用@property进行声明
+
+否则编译会报错
+
+```C
+Property implementation must have its declaration in interface 'XXX' or one of its extensions
+```
+
+
+
+
+
+### @synthesize的优先级
+
+@synthesize的优先级大于@property
+
+如果@property int age; 
+
+后面又写了个@synthesize age;
+
+虽然说@property会生成 _age 的成员变量，但是@synthesize的优先级更高，这样写只会生成age，不会生成 _age
+
