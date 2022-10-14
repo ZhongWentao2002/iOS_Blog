@@ -110,6 +110,22 @@ Xcode 4.5 之后，Apple对 **@property** 进行了一波增强
 
 # 注意事项
 
+### 同时重写setter和getter方法时，@property不会生成成员变量
+
+![image](Images/Snipaste_2022-10-14_12-56-45.png)
+
+解决方法有两种，**任选其一即可**
+
+- 使用@synthesize 声明
+
+![image](Images/Snipaste_2022-10-14_13-01-01.png))
+
+- 使用大括号声明
+
+![image](Images/Snipaste_2022-10-14_13-02-02.png)
+
+
+
 ### 使用@synthesize必须使用@property进行声明
 
 否则编译会报错
@@ -117,8 +133,6 @@ Xcode 4.5 之后，Apple对 **@property** 进行了一波增强
 ```C
 Property implementation must have its declaration in interface 'XXX' or one of its extensions
 ```
-
-
 
 
 
@@ -131,4 +145,10 @@ Property implementation must have its declaration in interface 'XXX' or one of i
 后面又写了个@synthesize age;
 
 虽然说 **@property** 会生成 _age 的成员变量，但是 **@synthesize** 的优先级更高，这样写只会生成age，不会生成 _age
+
+
+
+
+
+
 
