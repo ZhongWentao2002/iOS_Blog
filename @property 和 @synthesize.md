@@ -118,7 +118,11 @@ Xcode 4.5 之后，Apple对 **@property** 进行了一波增强
 
 - 使用@synthesize 声明
 
-![image](Images/Snipaste_2022-10-14_13-01-01.png))
+![image](Images/Snipaste_2022-10-14_13-01-01.png)
+
+这里的**@synthesize**只起到关联成员变量的作用，不会自动改变setter，getter的实现
+
+
 
 - 使用大括号声明
 
