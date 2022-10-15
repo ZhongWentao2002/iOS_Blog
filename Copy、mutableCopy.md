@@ -96,7 +96,7 @@
 
 - 需要实现 **copyWithZone:** 方法
 
-![image](Images/.png)
+![image](Images/Snipaste_2022-10-16_07-33-37.png)
 
 注意如果是 **MRC** 下，这里 **allocWithZone** 无需 **release**，因为 **copy** 调用者会承担 **release** 的责任
 
