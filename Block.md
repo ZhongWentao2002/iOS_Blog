@@ -60,3 +60,29 @@ int res = MySum(10,20);
 
 ### Block 的特点
 
+- **Block** 可以访问局部变量,全局变量
+
+- **Block** 可以修改全局变量，但是**不能修改**局部变量 
+
+![image](Images/Snipaste_2022-10-16_04-05-08.png)
+
+
+
+![image](Images/Snipaste_2022-10-16_04-01-50.png)
+
+
+
+### __block 关键字
+
+默认情况下，**Block** 无法修改局部变量
+
+如果需要修改局部变量，需要给局部变量加上 **__block** 关键字
+
+![image](Images/Snipaste_2022-10-16_04-07-33.png)
+
+
+
+### Block 的内存管理
+
+**Block** 既然是一个数据类型，那么就可以作为类的属性
+
