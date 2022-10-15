@@ -1,7 +1,7 @@
 # @property
 
 ```objective-c
-@property [(参数1,参数2,...)] <数据类型> <属性名>
+@property <数据类型> <属性名>
 ```
 
 - 编译器在编译这行代码的时候，会自动生成对应属性名的**setter**和**getter**的**声明**
@@ -83,13 +83,17 @@
 
 # @property 增强版 ( Xcode >= 4.5 )
 
-Xcode 4.5 之后，Apple对 **@property** 进行了一波增强
+```objective-c
+@property [(参数1,参数2,...)] <数据类型> <属性名>
+```
+
+**Xcode 4.5** 之后，Apple对 **@property** 进行了增强
 
 现在只需要写一句 **@property** ，无需写 **@synthesize**  就可以实现所有的功能
 
 同样也是属于编译器特性
 
-#### 增强的@property 做了以下几件事
+#### **增强的**@property 做了以下几件事
 
 - 生成**附加下划线的**对应属性名的成员变量
 
@@ -99,6 +103,88 @@ Xcode 4.5 之后，Apple对 **@property** 进行了一波增强
 增强的**@property xxx; = @property xxx; + @synthesize xxx = _xxx;**
 
 以后说**@property**，均指增强过后的**@property**
+
+
+
+# @property 参数
+
+**@property** 后面可以加参数，即使不写，编译器也会自动加上默认参数 **(atomic, assign,readwrite)**
+
+**@property 的参数可以分为5种，每一种只能接受一个参数**
+
+### 1 内存管理相关参数
+
+用于：set方法内存管理
+
+#### MRC
+
+- **assign** (默认参数)
+
+assign的字面意思是赋值，这代表这个属性的set使用直接复制的实现，不添加内存管理代码
+
+适合非OC对象，基本数据类型
+
+- **retain**
+
+retain 参数会在set方法的实现添加符合内存管理代码（release旧值，retain新值），适合OC对象
+
+- **copy**
+
+copy 参数同retain一样，也会生成符合内存管理的代码（release旧值，copy新值），适用于**NSString**、**NSArray**等不可变对象。不过和retain不同，持有对象的时候调用的是copy方法，会拷贝一份新的值，而不是原对象的指针，使用copy生成了一个不可变的副本，是为了防止不知道的情况下属性值被修改。
+
+
+
+### 2 读写特性
+
+用于：是否要生成set方法
+
+- **readwrite** (默认参数) : 生成set和get的声明与实现，可读写
+- **readonly** ：只生成get方法的声明与实现（**不生成set的方法的声明与实现**），只读
+
+
+
+### 3 多线程特性
+
+- **atomic**：原子性操作，会被加锁，在多线程环境下,就不会出现变量被修改等奇怪的问题（保证数据同步）。原子操作就是不可再分的操作
+- **nonatomic**：非原子性操作，直接从内存中取数值（不考虑其是否被占用），在多线程环境下可提高性能，但无法保证数据同步。
+
+一般开发OC应用程序用 **nonatomic** 就足够
+
+
+
+### 4 方法名特性
+
+用于：set、get方法重命名，常用于**BOOL**类型的成员变量的get方法,以**is开头**
+
+![image](Images/Snipaste_2022-10-15_18-01-38.png)
+
+
+
+![iamge](Images/Snipaste_2022-10-15_18-01-07.png)
+
+
+
+### 5 类属性
+
+**Xcode 8** 引入了新特性，现在可以为类添加属性了
+
+> Objective-C now supports class properties, which interoperate with Swift type properties. They are declared as: @property (class) NSString *someStringProperty; They are never synthesized. 
+
+
+
+- **class** ：说明这是一个类属性
+
+当我们声明一个class属性的时候，编译器会发出警告，这也就是前面说的They are never synthesized
+
+这两个属性永远不会synthesized，因此如果我们不显式的添加setter和getter方法，Xcode就会提示警告信息使用 **@dynamic** 或者是**提供setter和getter方法**
+
+**注意在getter方法前面使用 + 让其成为一个类的方法**
+
+
+
+
+
+ 
 
 
 
