@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Book : NSObject <NSCopying>
 
-@property (nonatomic,retain) NSString *name;
+@property (nonatomic,copy) NSString *name;
 
 @end
 
