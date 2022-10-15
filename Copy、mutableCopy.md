@@ -88,3 +88,12 @@
 
 
 
+### copy 修饰符的用法
+
+直接写 **copy** 会报错
+
+![image](Images/Snipaste_2022-10-16_07-01-35.png)
+
+
+
+- 需要实现 **copyWithZone:** 方法
