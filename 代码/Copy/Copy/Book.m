@@ -10,8 +10,8 @@
 @implementation Book
 
 - (id)copyWithZone:(struct _NSZone *)zone {
-    Book *copyObject = [[Book allocWithZone:zone] init];
     
+    Book *copyObject = [[[self class] allocWithZone:zone] init];
     copyObject.name = self.name;
     
     return copyObject;

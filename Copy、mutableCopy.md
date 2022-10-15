@@ -96,9 +96,11 @@
 
 - 需要实现 **copyWithZone:** 方法
 
-![image](Images/Snipaste_2022-10-16_07-09-11.png)
+![image](Images/.png)
 
 注意如果是 **MRC** 下，这里 **allocWithZone** 无需 **release**，因为 **copy** 调用者会承担 **release** 的责任
+
+如果父类有实现 **copyWithZone:** 则先调用父类的，再设置自己的属性，父类的 **copyWithZone:** 内部有 **allocWithZone**:
 
 
 
