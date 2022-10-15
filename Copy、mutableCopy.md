@@ -81,3 +81,10 @@
 ## @property 参数之 copy
 
 首先看一下不使用 **copy** 的例子
+
+![image](Images/Snipaste_2022-10-16_06-52-41.png)
+
+**myBook** 被修改后，**stu**的**book**属性也被修改了
+
+
+
