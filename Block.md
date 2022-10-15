@@ -18,7 +18,14 @@
 // 数据类型：
 <返回值> (^)([参数列表])
   
-// 定义:
+// 定义方法1 typedef 这里相当于定义了一种数据类型 名字为 MySum
+typedef int (^MySum) (int,int);
+
+Mysum sum = ^(int a,int b) {
+  return a+b;
+}
+
+// 定义方法2 直接定义直接使用  
 int (^MySum)(int x,int y) = ^(int a, int b) {
 		return a+b;
 }
