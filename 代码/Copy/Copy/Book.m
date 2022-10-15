@@ -9,6 +9,8 @@
 
 @implementation Book
 
-
+//+ (id)copyWithZone:(struct _NSZone *)zone {
+//    
+//}
 
 @end
