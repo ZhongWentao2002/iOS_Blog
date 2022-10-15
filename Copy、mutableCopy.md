@@ -72,15 +72,13 @@
 
 其他情况均为 **深拷贝**
 
-
-
 **浅拷贝** 等价于 **retain**
 
 
 
-## @property 参数之 copy
+# @property 参数之 copy
 
-首先看一下不使用 **copy** 的例子
+首先看一下不使用 **copy** 的结果
 
 ![image](Images/Snipaste_2022-10-16_06-52-41.png)
 
@@ -97,3 +95,13 @@
 
 
 - 需要实现 **copyWithZone:** 方法
+
+![image](Images/Snipaste_2022-10-16_07-09-11.png)
+
+注意如果是 **MRC** 下，这里 **allocWithZone** 无需 **release**，因为 **copy** 调用者会承担 **release** 的责任
+
+
+
+使用 **copy** 后的结果
+
+![image](Images/Snipaste_2022-10-16_07-10-08.png)
