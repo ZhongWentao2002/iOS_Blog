@@ -7,12 +7,12 @@
 - 编译器在编译这行代码的时候，会自动生成对应属性名的**setter**和**getter**的**声明**
 
 ```objc
-@property (nonatomic,copy) NSString *name;
+@property NSString *name;
 //等价于
 //- (NSString *)name;
 //- (void)setName:(NSString *)name;
 
-@property (nonatomic,assign) int _no;
+@property int _no;
 //等价于
 //- (int)_no;
 //- (void)set_no:(int)_no;
@@ -29,10 +29,6 @@
 ```
 
 - 编译器在编译这行代码的时候，会自动生成对应属性名的**setter**和**getter**的**标准实现**
-
-- **TIPS**：
-
-  > Xcode 13 测试的结果，MRC下  **@synthesize**  自动生成的实现是完全符合内存管理规则的，只是需要重写dealloc，将成员变量释放掉
 
 ```objc
 @synthesize age;
@@ -100,11 +96,9 @@ Xcode 4.5 之后，Apple对 **@property** 进行了一波增强
 - 生成**setter**，**getter**的声明
 - 生成**setter**，**getter**的实现
 
-增强的@property xxx; = @property xxx; + @synthesize xxx = _xxx;
+增强的**@property xxx; = @property xxx; + @synthesize xxx = _xxx;**
 
-> **TIPS**：
->
-> Xcode 13 测试的结果，MRC下  **@property**  自动生成的实现是完全符合内存管理规则的，只是需要重写dealloc，将成员变量释放掉
+以后说**@property**，均指增强过后的**@property**
 
 
 
