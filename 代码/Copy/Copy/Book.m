@@ -9,8 +9,12 @@
 
 @implementation Book
 
-//+ (id)copyWithZone:(struct _NSZone *)zone {
-//    
-//}
+- (id)copyWithZone:(struct _NSZone *)zone {
+    Book *copyObject = [[Book allocWithZone:zone] init];
+    
+    copyObject.name = self.name;
+    
+    return copyObject;
+}
 
 @end
