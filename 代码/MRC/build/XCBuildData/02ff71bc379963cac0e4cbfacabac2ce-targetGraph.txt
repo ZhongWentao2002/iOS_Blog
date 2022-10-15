@@ -1,0 +1,2 @@
+Target dependency graph (1 target)
+MRC (property) in MRC, no dependencies
