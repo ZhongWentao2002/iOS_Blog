@@ -9,8 +9,6 @@
 
 @implementation Book
 
-- (nonnull id)copyWithZone:(nullable NSZone *)zone {
-    self = zone;
-}
+
 
 @end

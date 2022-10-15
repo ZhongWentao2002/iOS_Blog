@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Student : NSObject
 
-@property (nonatomic, strong) Book *book;
+@property (nonatomic, retain) Book *book;
 
 - (void)readBook;
 

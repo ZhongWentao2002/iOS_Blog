@@ -130,7 +130,7 @@ retain 参数会在set方法的实现添加符合内存管理代码（release旧
 
 - **copy**
 
-copy 参数同retain一样，也会生成符合内存管理的代码（release旧值，copy新值），适用于**NSString**、**NSArray**等不可变对象。不过和retain不同，持有对象的时候调用的是copy方法，会拷贝一份新的值，而不是原对象的指针，使用copy生成了一个不可变的副本，是为了防止不知道的情况下属性值被修改。
+关于 **copy** 的详细内容，请查看 《copy & mutableCopy》
 
 
 
