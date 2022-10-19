@@ -31,3 +31,10 @@ KVC允许开发者通过Key名直接访问对象的属性，或者给对象的�
 - KVC 支持**自动类型转换**
 
 ![image](Images/Snipaste_2022-10-18_22-47-16.png)
+
+
+
+### 不建议使用 setValuesForKeyWithDictionary:
+
+- 字典中的key必须要在模型的属性中找到
+- 无法嵌套使用（字典里面有字典）
