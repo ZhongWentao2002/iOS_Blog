@@ -132,6 +132,26 @@ retain 参数会在set方法的实现添加符合内存管理代码（release旧
 
 关于 **copy** 的详细内容，请查看 《copy & mutableCopy》
 
+#### ARC
+
+- **assign** (默认参数)
+
+与MRC一致，用于int等基本数据类型
+
+- **strong**
+
+用于**OC对象**，强指针指向
+
+- **weak**
+
+用于**OC对象**，弱指针指向
+
+关于什么是强弱指针，请查看《strong & weak》
+
+- **copy**
+
+关于 **copy** 的详细内容，请查看 《copy & mutableCopy》
+
 
 
 ### 2 读写特性
@@ -184,13 +204,7 @@ retain 参数会在set方法的实现添加符合内存管理代码（release旧
 
 # @dynamic
 
-
-
-
-
-
-
-
+**@dynamic** 告诉编译器,属性的setter与getter方法由用户自己实现，不自动生成
 
 
 
