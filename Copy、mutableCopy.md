@@ -10,11 +10,11 @@
 
 
 
-**copy** 操作会生成一个新的对象，引用计数为1，原对象引用计数不变
+**copy** 方法会生成一个新的对象，引用计数为1，原对象引用计数不变
 
 
 
-## Copy 操作
+## Copy 方法
 
 **Objective-C** 设计 **Copy** 操作的**目的是为了让赋值之后的值不被轻易改变**
 
@@ -33,6 +33,12 @@
 ![image](Images/Snipaste_2022-10-16_06-05-55.png)
 
 **str2 的值不随 str 的值而变化**
+
+
+
+#### 注意事项
+
+如果要使用 copy / mutableCopy 必须遵循 NSCopying 协议 （实现 copyWithZone 方法）
 
 
 
