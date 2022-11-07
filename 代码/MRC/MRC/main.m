@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "Student.h"
 #import "Book.h"
-#import "Task.h"
 
 void setBookForStu(Student *stu){
     Book *book = [[Book alloc] init];

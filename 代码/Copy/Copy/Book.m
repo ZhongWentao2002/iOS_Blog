@@ -17,4 +17,9 @@
     return copyObject;
 }
 
+- (id)copy {
+    
+    return nil;
+}
+
 @end

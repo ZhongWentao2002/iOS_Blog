@@ -9,11 +9,20 @@
 
 @implementation Book
 
+- (id)copyWithZone:(struct _NSZone *)zone {
+    
+    Book *copyObject = [[[self class] allocWithZone:zone] init];
+    copyObject.name = self.name;
+    
+    return copyObject;
+}
+
 - (void)dealloc{
     
     NSLog(@"Book（%@） -- dealloc",_name);
     
     [super dealloc];
 }
+
 
 @end

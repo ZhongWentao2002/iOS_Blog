@@ -40,6 +40,8 @@
 
 如果要使用 copy / mutableCopy 必须遵循 NSCopying 协议 （实现 copyWithZone 方法）
 
+因为调用copy会来到 copyWithZone 方法
+
 
 
 ## 其他类似 Copy 的操作

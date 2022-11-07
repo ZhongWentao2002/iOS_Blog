@@ -10,7 +10,6 @@
 		5E3C296728F81D71003E2C8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C296628F81D71003E2C8E /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5E3C299928F865E1003E2C8E /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C296E28F85930003E2C8E /* Book.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5E3C299A28F865E1003E2C8E /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C297428F85D6D003E2C8E /* Student.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5EA97F1D28FABB2E00186969 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA97F1C28FABB2E00186969 /* Task.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,8 +31,6 @@
 		5E3C296E28F85930003E2C8E /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		5E3C297328F85D6D003E2C8E /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		5E3C297428F85D6D003E2C8E /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		5EA97F1B28FABB2E00186969 /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
-		5EA97F1C28FABB2E00186969 /* Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +68,6 @@
 				5E3C296E28F85930003E2C8E /* Book.m */,
 				5E3C297328F85D6D003E2C8E /* Student.h */,
 				5E3C297428F85D6D003E2C8E /* Student.m */,
-				5EA97F1B28FABB2E00186969 /* Task.h */,
-				5EA97F1C28FABB2E00186969 /* Task.m */,
 			);
 			path = MRC;
 			sourceTree = "<group>";
@@ -134,7 +129,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EA97F1D28FABB2E00186969 /* Task.m in Sources */,
 				5E3C299928F865E1003E2C8E /* Book.m in Sources */,
 				5E3C296728F81D71003E2C8E /* main.m in Sources */,
 				5E3C299A28F865E1003E2C8E /* Student.m in Sources */,
@@ -152,7 +146,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -210,7 +204,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
