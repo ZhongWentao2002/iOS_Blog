@@ -204,7 +204,7 @@ retain 参数会在set方法的实现添加符合内存管理代码（release旧
 
 # @dynamic
 
-**@dynamic** 告诉编译器,属性的setter与getter方法由用户自己实现，不自动生成
+**@dynamic** 告诉编译器,属性的setter与getter方法由用户自己实现，不自动生成,也不会生成成员变量
 
 
 
